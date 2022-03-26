@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Diagnostics;
 
 namespace modul5_1302200097
 {
@@ -11,6 +12,9 @@ namespace modul5_1302200097
         int id;
         List<SayaTubeVideo> uploadedVideos;
         String username;
+
+        Debug.Assert(username.Length <= 100 && username != null );
+     
 
 
         public SayaTubeUser(String profile)
@@ -40,7 +44,7 @@ namespace modul5_1302200097
         public void GetTotalVideoplayCount()
         {
             int dataplayCount = 0;
-            foreach (SayaTubeVideo video in uploadedVideos)
+            foreach (SayaTubeVideo video in uploadedVideo)
             {
                 dataplayCount = dataplayCount + video.GetPlaycount();
             }
